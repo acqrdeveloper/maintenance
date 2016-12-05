@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        maintenance\Providers\AppServiceProvider::class,
+        maintenance\Providers\AuthServiceProvider::class,
+        // maintenance\Providers\BroadcastServiceProvider::class,
+        maintenance\Providers\EventServiceProvider::class,
+        maintenance\Providers\RouteServiceProvider::class,
 
         /** Providers Agregados para cosas nuevas en laravel **/
         Collective\Html\HtmlServiceProvider::class,
