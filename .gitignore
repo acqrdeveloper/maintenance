@@ -6,3 +6,5 @@ Homestead.json
 Homestead.yaml
 .env
 public/bower_components/
+public/load_images/copy/*
+public/load_images/origin/*

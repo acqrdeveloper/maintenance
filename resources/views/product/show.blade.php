@@ -3,7 +3,8 @@
 @endsection
 @section('content')
 
-    <div class="container-fluid">
+    <div class="container-fluid" data-form="deleteForm">
+        <input name="_token" type="hidden" value="{{ csrf_token() }}">
         <br>
         <div class="col-sm-6 col-sm-offset-3">
             <div class="row">
@@ -24,21 +25,22 @@
                 <br>
                 <br>
             </div>
-            <div class="panel-body row">
+            <div class="panel-body row ">
                 <div class="col-sm-6 text-left">
-                    <a href="{{ route('rIndexProduct') }}" class="btn btn-sm btn-default myBtnHoverSuccess"><span
-                                class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;back</a>
+                    <a href="{{ route('rIndexProduct') }}" class="btn btn-sm btn-default myBtnHoverSuccess"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;list</a>
+                    <a href="{{ route('rCreateProduct') }}" class="btn btn-sm btn-default myBtnHoverInfo"><span class="glyphicon glyphicon-plus"></span>&nbsp;add</a>
                 </div>
-                <div class="col-sm-6 text-right">
+                <div class="col-sm-6 text-right" >
                     <a href="{{ route('rEditProduct',$Product->id) }}" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;edit</a>
-                    <a href="{{ route('rIndexProduct',$Product->id) }}" class="btn btn-sm btn-default myBtnHoverDanger form-delete"  data-method="delete" data-confirm="Está seguro de eliminar el registro?" ><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;delete</a>
+                    <a href="{{ route('rDeleteProduct',$Product->id) }}" class="btn btn-sm btn-default myBtnHoverDanger form-delete"  data-method="delete" data-confirm="Está seguro de eliminar el registro?" ><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;delete</a>
                 </div>
                 @include('layouts.firma')
             </div>
         </div>
     </div>
 
+@include('layouts.form_del_upd')
+
 @section('custom_scripts')
-    <script src="{{ asset('appdev/laravel.js') }}"></script>
 @endsection
 @endsection

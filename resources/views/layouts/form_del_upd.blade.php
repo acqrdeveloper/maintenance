@@ -1,9 +1,11 @@
-/*
- Exemples :
- <a href="posts/2" data-method="delete" data-token="csrf_token()}}">
- - Or, request confirmation in the process -
- <a href="posts/2" data-method="delete" data-token="csrf_token()}}" data-confirm="Are you sure?">
- */
+<script type="text/javascript">
+
+    /*
+     Exemples :
+     <a href="posts/2" data-method="delete" data-token="csrf_token()}}">
+     - Or, request confirmation in the process -
+     <a href="posts/2" data-method="delete" data-token="csrf_token()}}" data-confirm="Are you sure?">
+     */
 
     (function () {
 
@@ -49,29 +51,31 @@
 
             createForm: function (link) {
                 var form =
-                    $('<form>', {
-                        'method': 'POST',
-                        'action': link.attr('href')
-                    });
+                        $('<form>', {
+                            'method': 'POST',
+                            'action': link.attr('href')
+                        });
 
                 var token =
-                    $('<input>', {
-                        'type': 'hidden',
-                        'name': '_token',
-                        'value': '{{ csrf_token() }}',
-                    });
+                        $('<input>', {
+                            'type': 'hidden',
+                            'name': '_token',
+                            'value': '{{ csrf_token() }}',
+                        });
 
                 var hiddenInput =
-                    $('<input>', {
-                        'name': '_method',
-                        'type': 'hidden',
-                        'value': link.data('method')
-                    });
+                        $('<input>', {
+                            'name': '_method',
+                            'type': 'hidden',
+                            'value': link.data('method')
+                        });
 
                 return form.append(token, hiddenInput)
-                    .appendTo('body');
+                        .appendTo('body');
             }
         };
 
         laravel.initialize();
     })();
+
+</script>

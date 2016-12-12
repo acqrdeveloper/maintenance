@@ -7,7 +7,6 @@
         <br>
         <div class="col-sm-6 col-sm-offset-3">
             {!! Form::open(['route'=>'rStoreProduct','method'=>'POST','id'=>'frmCreate','class'=>'form-horizontal','files'=>'true']) !!}
-            <input name="_token" type="hidden" value="{{ csrf_token() }}">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3><strong>Create Product</strong></h3>
@@ -40,7 +39,7 @@
                 <div class="panel-body row">
                     <div class="col-sm-6 text-left">
                         <a href="{{ route('rIndexProduct') }}" class="btn btn-sm btn-default myBtnHoverSuccess"><span
-                                    class="glyphicon glyphicon-home" ></span>&nbsp;&nbsp;back</a>
+                                    class="glyphicon glyphicon-home" ></span>&nbsp;&nbsp;list</a>
                     </div>
                     <div class="col-sm-6 text-right">
                         <button type="submit" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;&nbsp;save

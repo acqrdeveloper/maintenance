@@ -4,11 +4,13 @@
     <div class="container-fluid">
         <br>
         <div class="row">
-            <div class="col-sm-6">
-                <div class="col-sm-12">
-                    <h1><strong>List Products</strong></h1>
-                    <a href="{{ route('rCreateProduct') }}" class="btn btn-sm btn-default myBtnHoverInfo"><span
-                                class="glyphicon glyphicon-plus"></span>&nbsp;Add Product</a>
+            <div class="col-sm-12 ">
+                <h1 class="text-primary"><strong>List Products in PHP<small class="text-danger">7.0.13</small> - Laravel<small class="text-danger">5.3</small></strong></h1>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="col-sm-6  text-left">
+                    <br>
+                    <a href="{{ route('rCreateProduct') }}" class="btn btn-sm btn-default myBtnHoverInfo"><span class="glyphicon glyphicon-plus"></span>&nbsp;add product</a>
                 </div>
             </div>
             <div class="col-sm-6">
@@ -29,9 +31,9 @@
                             <br>
                             <div class="text-center">
                                 <a href="{{ route('rEditProduct',$product->id) }}" class="btn btn-sm btn-default "><span
-                                            class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Edit</a>
+                                            class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;edit</a>
                                 <a href="{{ route('rShowProduct',$product->id) }}" class="btn btn-sm btn-default "><span
-                                            class="glyphicon glyphicon-oil"></span>&nbsp;&nbsp;See</a>
+                                            class="glyphicon glyphicon-oil"></span>&nbsp;&nbsp;see</a>
                             </div>
                         </div>
                     </div>
