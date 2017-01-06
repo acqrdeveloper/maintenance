@@ -1,4 +1,3 @@
-//todo >> ejecutar en la ruta destino de public [ bower install -f ]
 {
   "name": "maintenance-PHPLaravel",
   "version": "0.1.0",
