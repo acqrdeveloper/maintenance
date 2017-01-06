@@ -39,7 +39,7 @@
         </div>
     </div>
 
-@include('layouts.form_del_upd')
+@include('layouts.laravel')
 
 @section('custom_scripts')
 @endsection

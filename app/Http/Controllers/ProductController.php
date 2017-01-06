@@ -2,16 +2,15 @@
 
 namespace maintenance\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use maintenance\Http\Interfaces\ProductInterface;
 use maintenance\Http\Requests\ProductRequest;
 use maintenance\Product;
 use PDOException;
-use File;
 
 class ProductController extends Controller implements ProductInterface
 {
-
     function index()
     {
         // TODO: Implement index() method.
@@ -115,7 +114,7 @@ class ProductController extends Controller implements ProductInterface
             $pathOrigin = public_path() . '/load_images/origin/';
             $pathCopyOrigin = public_path() . '/load_images/copy/';
 
-            //TODO : Validando
+            //TODO : Validando si tiene imagen
             if ($request->hasFile('image')) {
                 //TODO : Eliminamos los archivos imagen obtenido
                 $this->deleteImage($pathOrigin, $lastImage);
@@ -123,12 +122,13 @@ class ProductController extends Controller implements ProductInterface
 
                 //todo : Guardar Copia
                 $this->saveImage($image, $pathCopyOrigin, $requestImage);
+
                 //todo : Guardar original
                 $imageRename = $this->saveImage($image, $pathOrigin, $requestImage);
-            }
 
-            //todo >> campo de imagen seteada para insertar
-            $obj->image = $imageRename;
+                //todo >> campo de imagen seteada para insertar
+                $obj->image = $imageRename;
+            }
 
             //todo >> insertando en la base de datos
             $obj->save($request->all());
@@ -145,11 +145,22 @@ class ProductController extends Controller implements ProductInterface
     {
         // TODO: Implement destroy() method.
         try {
-            Product::destroy($id);
+            $obj = Product::findOrFail($id);
 
+            //TODO : Validando si tiene imagen
+            $lastImage = $obj->image;
+
+            //todo >> ruta de imagen original y copia
+            $pathOrigin = public_path() . '/load_images/origin/';
+            $pathCopyOrigin = public_path() . '/load_images/copy/';
+
+            //TODO : Eliminamos los archivos imagen obtenido
+            $this->deleteImage($pathOrigin, $lastImage);
+            $this->deleteImage($pathCopyOrigin, $lastImage);
+
+            Product::destroy($id);
             flash("Deleted successfully", "success");
             return redirect()->route('rIndexProduct');
-
         } catch (PDOException $ex) {
             return redirect()->back()->withErrors('msg_errors', $ex->getMessage() . ' - ' . $ex->getLine());
         }

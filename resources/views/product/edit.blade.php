@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <br>
         <div class="col-sm-6 col-sm-offset-3">
-            {!! Form::model($Product,['route'=>['rUpdateProduct',$Product->id],'method'=>'PUT','id'=>'frmUpdate','class'=>'form-horizontal','files'=>'true']) !!}
+                {!! Form::model($Product,['route'=>['rUpdateProduct',$Product->id],'method'=>'PUT','id'=>'frmUpdate','class'=>'form-horizontal','files'=>'true']) !!}
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3><strong>Edit Product</strong></h3>
@@ -29,18 +29,22 @@
                     </div>
                     <div class="form-group-sm">
                         <label for="" class="control-label">load image</label>
-                        <input name="image" type="file" class="form-control input-sm" value="{{ $Product->image }}">
-                        <input name="imagaTwo" type="hidden" class="form-control input-sm"
-                               value="{{ $Product->image }}">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <label for="idImage" class="btn btn-sm btn-default btn-block">
+                                    <input id="idImage" name="image" type="file" class="input-sm" value="{{ $Product->image }}">
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group-sm">
                         <label for="" class="control-label">load image</label>
-                        <input name="imageTree" type="text" class="form-control input-sm" value="{{ $Product->image }}">
+                        <input name="imageTree" type="text" class="form-control input-sm" disabled value="{{ $Product->image }}">
                     </div>
                     <div class="form-group-sm">
                         <label for="" class="control-label">description</label>
-                        <textarea name="description" type="text"
-                                  class="form-control input-sm">{{ $Product->description }}</textarea>
+                        <textarea name="description" type="text" cols="30" rows="4"
+                                  class="form-control input-sm" >{{ $Product->description }}</textarea>
                     </div>
                 </div>
                 <div class="panel-body row">
