@@ -50,7 +50,7 @@
                 <div class="panel-body row">
                     <div class="col-sm-6 text-left">
                         <a id="aBack" href="{{ route('rIndexProduct') }}" class="btn btn-sm btn-default myBtnHoverSuccess"><span
-                                    class="glyphicon glyphicon-home "></span>&nbsp;&nbsp;back</a>
+                                    class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;list</a>
                     </div>
                     <div class="col-sm-6 text-right">
                         <button type="submit" class="btn btn-sm btn-default">

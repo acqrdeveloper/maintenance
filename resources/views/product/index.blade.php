@@ -27,7 +27,7 @@
                             <div class="text-center">
                                 <h4>{{ strtoupper($product->name) }}</h4>
                             </div>
-                            <img src="{{ asset('/load_images/origin/'.$product->image) }}" alt="auto" width="250">
+                            <div class="text-center"><a href="{{ route('rShowProduct',$product->id) }}" class="btn btn-default text-center myBtnHoverPrimary"><img src="{{ asset('/load_images/origin/'.$product->image) }}" alt="auto" width="250"></a></div>
                             <br>
                             <div class="text-center">
                                 <a href="{{ route('rEditProduct',$product->id) }}" class="btn btn-sm btn-default "><span

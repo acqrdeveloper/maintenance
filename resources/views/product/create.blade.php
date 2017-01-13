@@ -32,7 +32,8 @@
                         <div class="col-sm-12">
                             <div class="row">
                                 <label for="idImage" class="btn btn-sm btn-default btn-block">
-                                    <input id="idImage" name="image" type="file" class="input-sm" value="{{ old('image') }}">
+                                    <input id="idImage" name="image" type="file" class="input-sm"
+                                           value="{{ old('image') }}">
                                 </label>
                             </div>
                         </div>
@@ -46,7 +47,7 @@
                 <div class="panel-body row">
                     <div class="col-sm-6 text-left">
                         <a href="{{ route('rIndexProduct') }}" class="btn btn-sm btn-default myBtnHoverSuccess"><span
-                                    class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;list</a>
+                                    class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;list</a>
                     </div>
                     <div class="col-sm-6 text-right">
                         <button type="submit" class="btn btn-sm btn-default"><span
